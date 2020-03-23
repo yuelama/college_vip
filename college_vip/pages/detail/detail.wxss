@@ -1,0 +1,120 @@
+/* pages/detail/detail.wxss */
+
+.comment-text {
+  height: 100%;
+  display: flex;
+  color: rgb(51,51,51);
+  padding-top:36rpx;
+  font-size: 36rpx;
+  line-height: 56rpx;
+  padding-left: 12rpx;
+}
+
+.comment-avatar {
+  height: 90rpx;
+  width: 70rpx;
+  border-radius: 35rpx;
+}
+
+.comment-author {
+  color: rgb(89,93,96);
+  font-size: 28rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 24rpx
+}
+
+
+.container {
+   width: 100%;
+  height: 100%;
+  padding-bottom: 100rpx; 
+  
+  /* display:flex;
+  flex-direction: column; */
+  padding:18rpx;
+}
+
+
+
+.topic-detail {
+  width: 750rpx;
+  height: 375rpx;
+  background-color: rgb(41, 153, 255);
+}
+
+.comment-container {
+  width: 100%;
+  /* height: 300rpx; */
+  background-color: white;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+}
+
+.comment-content {
+  justify-content: space-between;
+  padding-bottom: 12rpx;
+}
+
+.comment-text {
+  font-size:28rpx;
+  color:rgb(51,51,51);
+  display: -webkit-box ;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:3;
+}
+
+.comment-text-container {
+  height: 100%;
+  padding-right: 28rpx;
+  padding-bottom: 16rpx;
+  margin-top: 16rpx;
+}
+
+.comment-avatar {
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 35rpx;
+}
+
+
+
+
+
+ /* 发表评论组件 */
+.section {
+  padding:auto;
+ 
+} 
+
+.form{
+	width:660rpx;
+	
+}
+
+.tet{
+	width:95%;
+	height: 160rpx; 
+	/* border:1px red solid; */
+	padding:center;
+	margin-top:400rpx;
+	background-color:white;
+}
+
+
+.but{	
+	display:flex;
+	margin-left:520rpx;
+	margin-top:30rpx;
+	font-size:36rpx ;
+	/* border:1px blue solid; */
+    background-color:#FFC0CB;
+}

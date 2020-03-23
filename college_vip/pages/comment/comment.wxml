@@ -1,0 +1,14 @@
+<!--pages/comment/comment.wxml-->
+<view class="comment-container" wx:for="{{newsdata}}" wx:key="{{item}}" data-newsid="{{item.id}}">
+  <!-- 头像和名字 -->
+  <view style="display:flex; flex-direction: row">
+    <image class="comment-avatar" src="{{item.headimg}}"></image>
+    <text class="comment-author">{{item.nickname}}</text>
+  </view>
+  <!-- 新闻内容 -->
+  <image class="comment-newsurl" src="{{item.newsurl}}"></image>
+  <text class="comment-text">{{item.content}}</text>
+
+  <!-- 评论时间 -->
+  <text class="comment-date" >{{item.createtime}}</text>
+</view>

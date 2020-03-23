@@ -1,0 +1,18 @@
+<!--pages/upload/upload.wxml-->
+<view style="height:100%;width:100%;">
+  <!-- 写文字的地方 -->
+  <textarea class="input" placeholder="写点什么吧..." placeholder-style="color:rgb(204, 204, 204);font-size:32rpx" maxlength="1000" bindblur="bindTextAreaBlur"></textarea>
+  <view style="display:flex;flex-dirction:row,margin-top:16rpx;justify-content:center;">
+    <!-- 传图片的地方 -->
+    <view bindtap='chooseImage' style="width:300rpx;height:300rpx;background-color:rgb(239,239,239);display:flex;justify-content:center;align-items:center;margin-right:16rpx;">
+      <block wx:if="{{!hasChooseImage}}">
+        <image src="../../../images/picture.png" style="width:80rpx;height:80rpx;"></image>
+      </block>
+      <block wx:if="{{hasChooseImage}}">
+        <image src="{{imagePath}}" mode="aspectFill" style="width:300rpx;height:300rpx;"></image>
+      </block>
+    </view>
+  </view>
+  <!-- 发布按钮 -->
+  <view class="submit-btn" bindtap='submitData'>发布</view>
+</view>

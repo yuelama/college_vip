@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "college_vip/pages/login/login",
+
+    "college_vip/pages/home/home",
+   
+    
+   "college_vip/pages/detail/detail",
+    "college_vip/pages/upload/upload",
+    
+    "college_vip/pages/profile/profile",
+    "college_vip/pages/comment/comment",
+    "college_vip/pages/topic/topic",
+    "college_vip/pages/write/write"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "约啦吗",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#2999FF",
+    "color": "#C5C9CE",
+    "list": [
+      {
+        "pagePath": "college_vip/pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home_disable.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "college_vip/pages/upload/upload",
+        "text": "发布",
+        "iconPath": "images/add_disable.png",
+        "selectedIconPath": "images/add.png"
+      },
+      {
+        "pagePath": "college_vip/pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/user_disable.png",
+        "selectedIconPath": "images/user.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

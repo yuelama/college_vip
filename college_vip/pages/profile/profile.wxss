@@ -1,0 +1,48 @@
+/* pages/profile/profile.wxss */
+page{
+  background-color: white;
+}
+
+.motto {
+  font-size: 36rpx;
+  color: rgb(197,201,206);
+  display: flex;
+  position: fixed;
+  bottom: 30rpx;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 28rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+}
+
+ /* 新增加项目样式 */
+
+
+
+#fuli,#like {
+  margin-bottom:10px;
+  padding:0 10px;
+  height:100%;
+ /* border-top:1px solid #ccc;  添加上划线*/
+  border-bottom:1px solid #ccc;
+  background: #fff;
+  font-size:14px;
+  letter-spacing:2px;
+}
+
+.fllist {
+  height:50px;
+  line-height:50px;
+}
