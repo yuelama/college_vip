@@ -8,5 +8,5 @@
   <!-- 标语 -->
   <text class="motto">只为约见 , 兴趣相投的他（她）。</text>
 
-  <button class="joinBtn" open-type="getUserInfo" bindgetuserinfo="updateUserInfo">进入</button>
+  <button class="joinBtn" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="updateUserInfo">进入</button>
 </view>

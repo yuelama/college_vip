@@ -31,15 +31,10 @@
     </view>
   </scroll-view>
 
+     <!-- 底部的写评论的按钮 -->
+    <view class="write-btn" data-topicid="{{item.id}}"  bindtap='jumpToWrite'>说点什么吧..</view>
 
-  <!-- 底部的写评论的按钮 -->
-<view class="section" >
-  <form class="form" bindsubmit="judesubmit">
-    <textarea class="tet" placeholder="说点什么吧.." name="textarea" bindinput="bindFormSubmit" value="{{commenttext}}"/>
-    <button class="but" size="mini"  loading="{{isLoading}}" form-type="submit">发送</button> 
-  </form>   
-</view>
+</view>   
+   
 
 
-
-</view>

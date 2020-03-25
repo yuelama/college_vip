@@ -1,17 +1,17 @@
 {
   "pages": [
     "college_vip/pages/login/login",
-
     "college_vip/pages/home/home",
+    "college_vip/pages/write/write",
    
-    
+     
    "college_vip/pages/detail/detail",
     "college_vip/pages/upload/upload",
     
     "college_vip/pages/profile/profile",
     "college_vip/pages/comment/comment",
-    "college_vip/pages/topic/topic",
-    "college_vip/pages/write/write"
+    "college_vip/pages/topic/topic"
+    
   ],
   "window": {
     "backgroundTextStyle": "dark",

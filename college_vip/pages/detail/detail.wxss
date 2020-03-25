@@ -90,23 +90,19 @@
 
 
  /* 发表评论组件 */
-.section {
-  padding:auto;
+ .write-btn{
+	 border:1px slive solid; 
+	 background-color:white;  
+	 margin-top:460rpx; 
+	 width:90%; 
+	 height: 80rpx; 
+	 padding:10rpx;	 
+ }
  
-} 
-
-.form{
-	width:660rpx;
-	
-}
-
-.tet{
-	width:95%;
-	height: 160rpx; 
-	/* border:1px red solid; */
-	padding:center;
-	margin-top:400rpx;
-	background-color:white;
+ 
+ 
+.weui-cells_title{
+	border:1px blue solid;
 }
 
 

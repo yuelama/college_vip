@@ -1,7 +1,13 @@
 <!--pages/write/write.wxml-->
-<view class="container">
-  <view class="input-container">
-    <textarea class="input" placeholder="说点什么吧..." placeholder-style="color:rgb(204, 204, 204);font-size:32rpx" maxlength="1000" bindblur="bindTextAreaBlur"></textarea>
-  </view>
-  <view class="button" bindtap='submit'>发布</view>
-</view>
+ <view style="height:100%;width:100%;">
+   <!-- 写文字的地方 -->
+   <textarea class="input" placeholder="写点什么吧..." placeholder-style="color:rgb(204, 204, 204);font-size:32rpx" maxlength="1000" bindblur="bindTextAreaBlur"></textarea>
+
+   <!-- 发布按钮 -->
+   <view class="submit-btn" bindtap='submitData'>发布</view>
+ </view>
+  
+  
+
+
+  

@@ -1,14 +1,22 @@
 // pages/write/write.js
+import { chooseImage,upload} from '../../util/image.js';
 let apps = getApp();
+var openid;
+var avatarUrl;
+var nickName;
+var topicId;
+
 
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    value:"",
+    text:'',
     topicId:'',
     nickName:'',
+	openid:'',
+	commentText:'', 
     avatarUrl:''
   },
 
@@ -16,47 +24,80 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    this.setData({
-      avatarUrl: options.avatarUrl,
-      nickName: options.nickName,
-      topicId: options.topicId
+    //console.log(options)
+    this.setData({  
+     avatarUrl: options.avatarUrl,
+     nickName: options.nickName,
+     topicId: options.topicId
     })
   },
 
-  bindTextAreaBlur:function(event){
-    console.log('bindTextAreaBlur:'+event.detail.value)
-    this.setData({
-      value: event.detail.value
-    })
-  },
-
-  submit:function(event){
-    console.log('submit:' + this.data.value)
-
-    var Comment = AV.Object.extend('Comment');
-    var comment = new Comment();
-    comment.set('commentText', this.data.value);
-    comment.set('topicId', this.data.topicId);
-    comment.set('userAvatar', this.data.avatarUrl);
-    comment.set('userName', this.data.nickName);
-    comment.set('userId', app.globalData.userInfo.objectId);
   
-    wx.showLoading({
-      title: '发布中',
-      mask:true
-    })
-    comment.save().then(function (comment) {
-      console.log('objectId is ' + comment.id);
-      wx.hideLoading();
-      wx.showToast({
-        title: '发布成功',
-      })
-      wx.navigateBack({
-        delta:1,
-      })
-    }, function (error) {
-      console.error(error);
-    });
+ //获取区域颜色数据
+ bindTextAreaBlur: function(event) {
+   //console.log('bindTextAreaBlur:' + event.detail.value)
+   //console.log(event.detail.value)
+   this.setData({
+     text: event.detail.value
+   })
+ }, 
+  
+  
+
+  submitData:function(event){	  
+	 		if (this.data.text == '' ) {
+	 		      wx.showToast({
+	 		        icon: 'none',
+	 		        title: '请写点东西吧',
+	 		      })
+	 		      }else{
+	 		        this.uploadComment();
+	 		      }
+	 		    
+	  
+  },
+  
+  uploadComment:function(){
+	   var that = this;
+	  var commentText = that.data.text;
+	  console.log(commentText)
+	   
+	      var topicId = that.data.topicId;	
+	  	wx.getUserInfo({
+	  		  success: function(res) {
+	  			// console.log(res)
+	  		   //wx.hideLoading()
+	  	that.data.avatarUrl = res.userInfo.avatarUrl	
+	  	that.data.userName = res.userInfo.nickName	
+	  	apps.util.request({
+	  		  'url': 'entry/wxapp/getComments',
+	  		  header: {
+	  		    'content-type': 'application/json' // 默认值
+	  		  },
+	  	data:{
+	  	  topicId:that.data.topicId,
+	     commentText:that.data.text,
+	  	  openid:wx.getStorageSync('userid'),
+	  	  avatarUrl:that.data.avatarUrl,
+	  	  userName:that.data.userName,
+	  	},
+	  		  success(res) {
+	  		      console.log(res)		 			  
+	  		   	 that.setData({
+	  		   				commentText:'',
+	  						topicId:''
+	  				    
+	  		       })								 
+	  				 
+	  	      }
+	  	   })			  			
+	  			
+	       }
+	  	  })
+	  	 
+	  
+	  
   }
+  
+  
 })
